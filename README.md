@@ -13,9 +13,9 @@
 
 ## ✅ commit 규칙
 
-commit 메세지: {type}(Programmers) : 문제이름
-description: 그 외 내용(option)
-터미널에서 작성법:
+- commit 메세지: {type}(Programmers) : 문제이름
+- description: 그 외 내용(option)
+- 터미널에서 작성법:
 
 > git commit -m "Feat(Programmers) : Hello World" -m "stack을 활용한 풀이 방식"
 
