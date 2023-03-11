@@ -31,6 +31,7 @@
 - PR 제목: {본인 깃허브 이름} : {문제 이름}
 - `beombu : Hello World`
 - comment는 자유입니다. 못푼 문제(안푼 문제가 아님)가 있다면 PR에 왜 못풀었는지, 어떤 로직으로 접근했는지 자세하게 써주세요.
+- lable : failure, success
 
 
 
