@@ -1,5 +1,6 @@
 package _1주차;
 
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 최댓값과최솟값 {
@@ -16,6 +17,13 @@ public class 최댓값과최솟값 {
         }
 
         return min + " " + max;
+    }
+
+    public String solution2(String s) {
+        int[] ints = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
+        Arrays.sort(ints);
+
+        return ints[0] + " " + ints[ints.length-1];
     }
 }
 
