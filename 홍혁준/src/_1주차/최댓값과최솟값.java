@@ -1,12 +1,12 @@
 package _1주차;
 
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class 최댓값과최솟값 {
     public String solution(String s) {
         int max = Integer.MIN_VALUE;    //최댓값
         int min = Integer.MAX_VALUE;    //최솟값
+
         StringTokenizer stringTokenizer = new StringTokenizer(s, " ");
 
         while(stringTokenizer.hasMoreTokens()){
