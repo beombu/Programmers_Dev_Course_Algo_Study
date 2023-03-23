@@ -22,12 +22,14 @@ public class 짝지어제거하기 {
         stack.push(s.charAt(index++));
 
         while(index < s.length()){
-            char nextC = s.charAt(index++);
+            char nextChar = s.charAt(index++);
 
-            if(!stack.isEmpty() && stack.peek() == nextC){
+            if(stack.isEmpty()){
+                stack.push(nextChar);
+            }else if(stack.peek() == nextChar){
                 stack.pop();
             }else{
-                stack.push(nextC);
+                stack.push(nextChar);
             }
         }
 
