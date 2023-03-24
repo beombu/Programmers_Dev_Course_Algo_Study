@@ -1,4 +1,4 @@
-package _1주차;
+package src._1주차;
 
 public class 이진변환반복하기 {
     public int[] solution(String s) {

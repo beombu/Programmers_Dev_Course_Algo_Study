@@ -1,4 +1,4 @@
-package _2주차;
+package src._2주차;
 
 import java.util.Stack;
 
