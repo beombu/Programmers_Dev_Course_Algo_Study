@@ -1,9 +1,9 @@
-package _1주차;
+package src._1주차;
 
 import java.util.Stack;
 
 public class 올바른괄호 {
-    public boolean solution(String s) {
+    public static boolean solution(String s) {
         Stack<Character> stack = new Stack<>();
 
         for(char c : s.toCharArray()){
@@ -16,5 +16,9 @@ public class 올바른괄호 {
         }
 
         return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solution("(()()())"));
     }
 }

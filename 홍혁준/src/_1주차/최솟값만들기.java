@@ -1,4 +1,4 @@
-package _1주차;
+package src._1주차;
 
 import java.util.Arrays;
 

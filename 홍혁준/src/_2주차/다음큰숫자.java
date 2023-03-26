@@ -1,4 +1,4 @@
-package _2주차;
+package src._2주차;
 
 public class 다음큰숫자 {
     public int solution(int n) {
