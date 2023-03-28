@@ -1,17 +1,15 @@
+/**
+ * Time : O(n)
+ */
 public class 예상_대진표 {
     public static int solution(int n, int a, int b)
     {
         int answer = 0;
-        int maxRound = (int) Math.sqrt(n) + 1;
 
-        for (int i = 1; i <= maxRound; i++) {
-            if (Math.abs(a - b) <= 1) {
-                answer = i;
-                break;
-            }
-
+        while (a != b) {
             a = nextNum(a);
             b = nextNum(b);
+            answer++;
         }
 
         return answer;
