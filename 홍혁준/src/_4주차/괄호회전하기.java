@@ -14,8 +14,7 @@ public class 괄호회전하기 {
      */
     public static int solution(String s) {
         int answer = 0;
-        if(s.equals(""))
-            return answer;
+
         Queue<Character> queue = s.chars()
                 .mapToObj(c -> (char)c)
                 .collect(Collectors.toCollection(LinkedList::new));
