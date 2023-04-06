@@ -1,0 +1,26 @@
+from collections import deque
+def solution(cacheSize, cities):
+    ans = 0
+    q=deque()
+    n=len(cities)
+    
+    for i in range(n):
+        cities[i]= cities[i].lower()
+    
+    for i in range(n):
+        CT=cities[i]
+        isIn=False #큐에 있으면 true
+        for j in range(len(q)):
+            if CT==q[j]:
+                isIn=True
+                ans+=1
+                q.remove(CT)
+                q.append(CT)
+                break
+                
+        if isIn==False:
+            q.append(CT)
+            ans+=5
+            if len(q)>cacheSize:
+                q.popleft()
+    return ans
