@@ -1,4 +1,4 @@
-package _6주차.java;
+package _6주차._1차뉴스클러스터링.java;
 
 import java.util.ArrayList;
 import java.util.List;
