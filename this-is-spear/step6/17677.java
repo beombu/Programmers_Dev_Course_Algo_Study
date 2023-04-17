@@ -11,7 +11,7 @@ class Solution {
 			return 65536;
 		}
 
-		return (int)(((double)intersaction / (union - intersaction)) * 65536);
+		return (int)(((double)intersaction / union) * 65536);
 	}
 
 	private Map<String, Integer> getMap(String str) {
@@ -46,7 +46,7 @@ class Solution {
 	}
 
 	private int getUnion(Map<String, Integer> s1, Map<String, Integer> s2) {
-		return getUnion(s1) + getUnion(s2);
+		return getUnion(s1) + getUnion(s2) - intersaction;
 	}
 
 	private int getUnion(Map<String, Integer> s) {
