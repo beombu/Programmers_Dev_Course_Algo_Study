@@ -2,7 +2,6 @@ package src._6주차;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
