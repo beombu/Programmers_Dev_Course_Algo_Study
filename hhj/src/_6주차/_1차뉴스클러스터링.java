@@ -66,9 +66,7 @@ public class _1차뉴스클러스터링 {
         }
 
         double intersection = 0;
-        double union = 0;
-
-        union = list1.size() + list2.size();
+        double union = list1.size() + list2.size();
 
         for(String s : list1){
             if(list2.contains(s)){
