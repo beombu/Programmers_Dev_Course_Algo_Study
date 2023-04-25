@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class _3차압축 {
+public class _3차_압축 {
 
     static int index = 0;
 
