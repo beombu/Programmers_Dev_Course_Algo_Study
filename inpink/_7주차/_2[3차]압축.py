@@ -19,7 +19,8 @@ def solution(msg):
                 answer.append(d[tmp])
                 break
         msg=msg[len(tmp):]
-        if not msg:
-            answer.append(d[tmp])
+        
+    #마지막 글자 예외 
+    answer.append(d[tmp])
     
     return answer
