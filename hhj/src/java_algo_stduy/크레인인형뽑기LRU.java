@@ -4,23 +4,6 @@ import java.util.*;
 
 public class 크레인인형뽑기LRU {
 
-    public static void main(String[] args) {
-
-        int[][] arr1 = new int[][]{
-                {0, 0, 0, 0, 0},
-                {0, 0, 1, 0, 3},
-                {0, 2, 5, 0, 1},
-                {4, 2, 4, 4, 2},
-                {3, 5, 1, 3, 1}
-        };
-
-        int[] arr2 = new int[]{
-                1, 5, 3, 5, 1, 2, 1, 4
-        };
-
-        System.out.println(solution(5, arr1, 8, arr2));
-    }
-
     /**
      * n*n의 정사각 크레인과 오른쪽 바구니 존재
      * 모든 인형은 1*1의 크기로 격자 한 칸을 아래부터 쌓여있음
@@ -77,5 +60,22 @@ public class 크레인인형뽑기LRU {
         }
 
         return answer;
+    }
+
+    public static void main(String[] args) {
+
+        int[][] arr1 = new int[][]{
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 3},
+                {0, 2, 5, 0, 1},
+                {4, 2, 4, 4, 2},
+                {3, 5, 1, 3, 1}
+        };
+
+        int[] arr2 = new int[]{
+                1, 5, 3, 5, 1, 2, 1, 4
+        };
+
+        System.out.println(solution(5, arr1, 8, arr2));
     }
 }
