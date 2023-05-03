@@ -1,4 +1,4 @@
-package src.완전탐색;
+package src.고득점kit.완전탐색;
 
 public class DFS_전력망을_둘로_나누기 {
 

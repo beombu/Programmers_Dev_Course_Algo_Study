@@ -1,4 +1,4 @@
-package src.완전탐색;
+package src.고득점kit.완전탐색;
 
 import java.util.LinkedList;
 import java.util.Queue;
