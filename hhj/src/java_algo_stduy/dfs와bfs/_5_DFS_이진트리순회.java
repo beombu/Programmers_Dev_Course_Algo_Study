@@ -3,28 +3,28 @@ package src.java_algo_stduy.dfs와bfs;
 public class _5_DFS_이진트리순회 {
 
     static Node root;
-    static StringBuilder pre = new StringBuilder();
-    static StringBuilder mid = new StringBuilder();
-    static StringBuilder next = new StringBuilder();
+    static StringBuilder 전위순회 = new StringBuilder();
+    static StringBuilder 중위순회 = new StringBuilder();
+    static StringBuilder 후위순회 = new StringBuilder();
 
     public static void main(String[] args) {
         init();
         dfs(root);
 
-        System.out.println(pre.toString());
-        System.out.println(mid.toString());
-        System.out.println(next.toString());
+        System.out.println(전위순회.toString());
+        System.out.println(중위순회.toString());
+        System.out.println(후위순회.toString());
     }
 
     public static void dfs(Node node){
         if(node==null)
             return;
 
-        pre.append(node.data + " ");
+        전위순회.append(node.data + " ");
         dfs(node.lt);
-        mid.append(node.data + " ");
+        중위순회.append(node.data + " ");
         dfs(node.rt);
-        next.append(node.data + " ");
+        후위순회.append(node.data + " ");
     }
 
     public static void init(){
@@ -43,8 +43,7 @@ public class _5_DFS_이진트리순회 {
     public static class Node {
 
         int data;
-        Node lt;
-        Node rt;
+        Node lt, rt;
 
         public Node(int data) {
             this.data = data;
