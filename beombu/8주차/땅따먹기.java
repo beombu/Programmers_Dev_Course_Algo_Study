@@ -1,47 +1,69 @@
+/**
+ * dp 공부해서 다시 풀기
+ */
 public class 땅따먹기 {
     public static void main(String[] args) {
         int[][] land1 = new int[][]{{1, 1, 3, 1}, {2, 3, 2, 2}, {1, 4, 1, 1}};
         int[][] land2 = new int[][]{{1, 1, 1, 1}, {2, 2, 2, 3}, {3, 3, 3, 6}, {4, 4, 4, 7}};
 
-        int result = new 땅따먹기().solution(land1);
+        int result = new 땅따먹기().solution(land2);
         System.out.println(result);
     }
 
-    public static boolean[] visited = new boolean[4];
+    int[][] dp;
+    int[][] map;
 
     int solution(int[][] land) {
-        return recursive(-1, land, 0);
+        dp = new int[land.length][land[0].length];
+        map = land;
+
+        int col = dp.length;
+        int row = dp[0].length;
+
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                dp[i][j] = map[i][j];
+            }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            recursive(1);
+        }
+
+//        for (int i = 0; i < col; i++) {
+//            for (int j = 0; j < row; j++) {
+//                System.out.print(dp[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < 4; i++) {
+            if (max < dp[col - 1][i]) {
+                max = dp[col - 1][i];
+            }
+        }
+
+        return max;
     }
 
-    private int recursive(int beforeIndex, int[][] land, int depth) {
-        int max = Integer.MIN_VALUE;
-        int nowIndex = 0;
-
-        if (depth == land.length) {
-            return 0;
+    private void recursive(int colNum) {
+        if (colNum == dp.length) {
+            return;
         }
 
-        if (depth == 0) {
-            for (int i = 0; i < land[depth].length; i++) {
-                if (max < land[0][i]) {
-                    max = land[0][i];
-                    nowIndex = i;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (i == j) {
+                    continue;
+                }
+
+                if (dp[colNum][i] < map[colNum][i] + dp[colNum - 1][j]) {
+                    dp[colNum][i] = map[colNum][i] + dp[colNum - 1][j];
                 }
             }
-            visited[nowIndex] = true;
-        } else {
-            for (int i = 0; i < land[depth].length; i++) {
-                if (!visited[i] && max < land[depth][i]) {
-                    max = land[depth][i];
-                    nowIndex = i;
-                }
-            }
-            visited[nowIndex] = true;
-            visited[beforeIndex] = false;
         }
 
-        System.out.println("max = " + max);
-
-        return max + recursive(nowIndex, land, depth + 1);
+        recursive(colNum + 1);
     }
 }
