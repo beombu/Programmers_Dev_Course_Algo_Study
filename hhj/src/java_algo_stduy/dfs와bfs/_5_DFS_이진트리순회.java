@@ -7,6 +7,17 @@ public class _5_DFS_이진트리순회 {
     static StringBuilder 중위순회 = new StringBuilder();
     static StringBuilder 후위순회 = new StringBuilder();
 
+    public static class Node {
+
+        int data;
+        Node lt, rt;
+
+        public Node(int data) {
+            this.data = data;
+            lt = rt = null;
+        }
+    }
+
     public static void main(String[] args) {
         init();
         dfs(root);
@@ -38,16 +49,5 @@ public class _5_DFS_이진트리순회 {
 
         root.rt.lt = new Node(6);
         root.rt.rt = new Node(7);
-    }
-
-    public static class Node {
-
-        int data;
-        Node lt, rt;
-
-        public Node(int data) {
-            this.data = data;
-            lt = rt = null;
-        }
     }
 }
