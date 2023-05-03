@@ -11,18 +11,18 @@ public class _6_DFS_부분집합 {
         dfs(0);
     }
 
-    public static void dfs(int point){
+    public static void dfs(int point) {
 
-        if(point == n){
+        if (point == n) {
             StringBuilder stringBuilder = new StringBuilder();
 
-            for(int i=0; i<n; i++){
-                if(visit[i]){
-                    stringBuilder.append(i+1).append(" ");
+            for (int i = 0; i < n; i++) {
+                if (visit[i]) {
+                    stringBuilder.append(i + 1).append(" ");
                 }
             }
 
-            if(stringBuilder.toString().length() > 0){
+            if (stringBuilder.toString().length() > 0) {
                 System.out.println(stringBuilder);
             }
 
@@ -30,8 +30,8 @@ public class _6_DFS_부분집합 {
         }
 
         visit[point] = true;
-        dfs(point+1);
+        dfs(point + 1);
         visit[point] = false;
-        dfs(point+1);
+        dfs(point + 1);
     }
 }

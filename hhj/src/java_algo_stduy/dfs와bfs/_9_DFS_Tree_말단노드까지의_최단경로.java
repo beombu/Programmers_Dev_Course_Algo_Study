@@ -7,7 +7,7 @@ public class _9_DFS_Tree_말단노드까지의_최단경로 {
 
     static Node root;
 
-    public static class Node{
+    public static class Node {
         int data;
         Node lt, rt;
 
@@ -23,15 +23,15 @@ public class _9_DFS_Tree_말단노드까지의_최단경로 {
         System.out.println(dfs(1, root));
     }
 
-    public static int dfs(int depth, Node node){
-        if(node.lt == null && node.rt == null){
+    public static int dfs(int depth, Node node) {
+        if (node.lt == null && node.rt == null) {
             return depth;
         }
 
-        return Math.min(dfs(depth+1, node.lt), dfs(depth+1, node.rt));
+        return Math.min(dfs(depth + 1, node.lt), dfs(depth + 1, node.rt));
     }
 
-    public static void init(){
+    public static void init() {
 
         root = new Node(1);
         root.lt = new Node(2);

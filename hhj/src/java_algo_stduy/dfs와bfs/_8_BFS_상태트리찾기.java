@@ -25,18 +25,18 @@ public class _8_BFS_상태트리찾기 {
         queue.offer(start);
         visit[start] = true;
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int size = queue.size();
 
-            for(int i=0; i<size; i++){
+            for (int i = 0; i < size; i++) {
                 int point = queue.poll();
 
-                for(int m : move){
+                for (int m : move) {
                     int nx = point + m;
 
-                    if(nx == end) return answer+1;
+                    if (nx == end) return answer + 1;
 
-                    if(nx >= 1 && nx <= 10000 && !visit[nx]){
+                    if (nx >= 1 && nx <= 10000 && !visit[nx]) {
                         visit[nx] = true;
                         queue.offer(nx);
                     }

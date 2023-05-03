@@ -8,13 +8,13 @@ public class _2_이진수출력 {
         System.out.println(stringBuilder.reverse().toString());
     }
 
-    static void dfs(int n){
+    static void dfs(int n) {
 
-        if(n==0){
+        if (n == 0) {
             return;
         }
 
-        stringBuilder.append(n%2);
-        dfs(n/2);
+        stringBuilder.append(n % 2);
+        dfs(n / 2);
     }
 }

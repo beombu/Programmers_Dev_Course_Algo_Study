@@ -8,11 +8,11 @@ public class _3_팩토리얼 {
         System.out.println(answer);
     }
 
-    static int dfs(int n){
+    static int dfs(int n) {
 
-        if(n==1){
+        if (n == 1) {
             return 1;
         }
-        return n * dfs(n-1);
+        return n * dfs(n - 1);
     }
 }

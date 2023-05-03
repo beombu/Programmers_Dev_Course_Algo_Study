@@ -27,8 +27,8 @@ public class _5_DFS_이진트리순회 {
         System.out.println(후위순회.toString());
     }
 
-    public static void dfs(Node node){
-        if(node==null)
+    public static void dfs(Node node) {
+        if (node == null)
             return;
 
         전위순회.append(node.data + " ");
@@ -38,7 +38,7 @@ public class _5_DFS_이진트리순회 {
         후위순회.append(node.data + " ");
     }
 
-    public static void init(){
+    public static void init() {
         root = new Node(1);
 
         root.lt = new Node(2);

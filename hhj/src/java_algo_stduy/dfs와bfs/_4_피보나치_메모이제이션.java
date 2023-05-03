@@ -7,18 +7,18 @@ public class _4_피보나치_메모이제이션 {
     public static void main(String[] args) {
         dfs(10);
 
-        for(int n : answer){
+        for (int n : answer) {
             System.out.println(n);
         }
     }
 
-    static int dfs(int n){
-        if(answer[n] > 0)
+    static int dfs(int n) {
+        if (answer[n] > 0)
             return answer[n];
 
-        if(n==1 || n==2)
+        if (n == 1 || n == 2)
             return answer[n] = 1;
 
-        return answer[n] = dfs(n-1) + dfs(n-2);
+        return answer[n] = dfs(n - 1) + dfs(n - 2);
     }
 }

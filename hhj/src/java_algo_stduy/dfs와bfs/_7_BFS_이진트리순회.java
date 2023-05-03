@@ -29,21 +29,21 @@ public class _7_BFS_이진트리순회 {
         Queue<Node> queue = new LinkedList<>();
         queue.offer(node);
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int size = queue.size();
 
             StringBuilder stringBuilder = new StringBuilder();
 
             stringBuilder.append(level + " : ");
 
-            for(int i=0; i<size; i++){
+            for (int i = 0; i < size; i++) {
                 Node currentNode = queue.poll();
                 stringBuilder.append(currentNode.data + " ");
 
-                if(currentNode.lt != null){
+                if (currentNode.lt != null) {
                     queue.offer(currentNode.lt);
                 }
-                if(currentNode.rt != null){
+                if (currentNode.rt != null) {
                     queue.offer(currentNode.rt);
                 }
             }
