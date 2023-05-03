@@ -1,4 +1,4 @@
-package src.고득점kit.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs;
 
 public class _3_팩토리얼 {
 
