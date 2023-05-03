@@ -4,42 +4,58 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-
+    static int[][] graph;
+    static boolean[] visit;
     static int answer = 0;
-    static boolean[] visit = new boolean[10001];
-    static int[] move = new int[]{-1, 1, 5};
+
+    static int vEnd = 5;
 
     public static void main(String[] args) {
-
-        System.out.println(bfs(5, 14));
+        init();
+        visit[1] = true;
+        dfs(1);
+        System.out.println(answer);
     }
 
-    private static int bfs(int start,
-                           int end) {
+    public static void dfs(int vStart){
 
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(start);
-        visit[start] = true;
-
-        while(!queue.isEmpty()){
-            int size = queue.size();
-
-            for(int i=0; i<size; i++){
-                int point = queue.poll();
-
-                for(int m : move){
-                    int nx = point + m;
-
-                    if(nx == end) return answer+1;
-
-                    if(nx >= 1 && nx <= 10000 && !visit[nx]){
-                        visit[nx] = true;
-                        queue.offer(nx);
-                    }
-                }
-            }
+        if(vStart == vEnd){
             answer++;
+            return;
         }
-        return 0;
+
+        for(int i=1; i<=vEnd; i++){
+            if(graph[vStart][i] == 1 && !visit[i]){
+                visit[i] = true;
+                dfs(i);
+                visit[i] = false;
+            }
+        }
+
+    }
+
+    //방향 그래프
+    public static void init() {
+
+        int[][] arr = new int[][]{
+                {1, 2},
+                {1, 3},
+                {1, 4},
+                {2, 1},
+                {2, 3},
+                {2, 5},
+                {3, 4},
+                {4, 2},
+                {4, 5}
+        };
+
+        visit = new boolean[vEnd+1];
+        graph = new int[vEnd+1][vEnd+1];
+
+        for (int[] edge : arr) {
+            int a = edge[0];
+            int b = edge[1];
+            graph[a][b] = 1;
+        }
     }
 }
