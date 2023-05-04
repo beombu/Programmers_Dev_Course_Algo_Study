@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * N개의 원소로 구성된 자연수 집합

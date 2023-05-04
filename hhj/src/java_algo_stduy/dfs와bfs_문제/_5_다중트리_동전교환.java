@@ -1,6 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
-
-import java.util.Arrays;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * 거스름 돈을 가장 적은 수의 동전으로 교환하기

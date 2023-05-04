@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * N까지 번호가 적힌 구슬

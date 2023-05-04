@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * N개의 문제를 풀려고 한다.

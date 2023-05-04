@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * 트럭은 네모 킬로그램 넘게 못 태움

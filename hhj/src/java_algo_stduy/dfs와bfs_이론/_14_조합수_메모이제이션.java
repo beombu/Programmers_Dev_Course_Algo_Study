@@ -1,6 +1,6 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_이론;
 
-public class _7_다중트리_조합수_메모이제이션 {
+public class _14_조합수_메모이제이션 {
 
     static int n = 33;
     static int r = 19;

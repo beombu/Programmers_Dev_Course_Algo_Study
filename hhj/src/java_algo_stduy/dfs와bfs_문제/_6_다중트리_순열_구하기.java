@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs_문제;
+package src.java_algo_stduy.dfs와bfs_문제;
 
 /**
  * 10이하의 N개 자연수
