@@ -23,11 +23,11 @@ public class DFS_1_합이_같은_부분집합 {
 
     public static void main(String[] args) {
 
-        for(int i : input2){
+        for(int i : input1){
             totalSum += i;
         }
 
-        dfs(1, 0);
+        dfs(0, 0);
         System.out.println(answer);
     }
 
@@ -44,9 +44,7 @@ public class DFS_1_합이_같은_부분집합 {
             return;
         }
 
-        for(int i=0; i<size; i++){
-            dfs(depth+1, sum + input2[i]);
-            dfs(depth+1, sum);
-        }
+        dfs(depth+1, sum + input1[depth]);
+        dfs(depth+1, sum);
     }
 }

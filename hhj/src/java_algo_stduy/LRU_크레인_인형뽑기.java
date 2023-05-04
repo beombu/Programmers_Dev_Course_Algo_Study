@@ -2,7 +2,7 @@ package src.java_algo_stduy;
 
 import java.util.*;
 
-public class LRU_크레인인형뽑기 {
+public class LRU_크레인_인형뽑기 {
 
     /**
      * n*n의 정사각 크레인과 오른쪽 바구니 존재
