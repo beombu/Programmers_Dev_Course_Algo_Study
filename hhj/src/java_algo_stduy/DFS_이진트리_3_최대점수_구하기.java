@@ -5,7 +5,7 @@ package src.java_algo_stduy;
  * 각 문제는 해당 문제를 풀었을 때 주는 점수와 시간이 주어짐
  * 제한시간 M안에 N개의 문제 중 최대 점수를 얻어야 함.
  */
-public class DFS_3_최대점수_구하기 {
+public class DFS_이진트리_3_최대점수_구하기 {
 
     static int size = 5;
     static int time = 20;

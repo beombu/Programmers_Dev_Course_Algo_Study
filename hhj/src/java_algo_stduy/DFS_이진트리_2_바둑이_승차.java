@@ -5,7 +5,7 @@ package src.java_algo_stduy;
  * 가장 무겁게 태울거임
  * N 마리의 바둑이와 가능한 무게 W
  */
-public class DFS_2_바둑이_승차 {
+public class DFS_이진트리_2_바둑이_승차 {
 
     static int maxWeight = 259;
     static int size = 5;
