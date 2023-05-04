@@ -23,13 +23,13 @@ public class _12_DFS_인접리스트_경로탐색 {
     }
 
     private static void dfs(int vStart) {
-        if(vStart == vEnd){
+        if (vStart == vEnd) {
             answer++;
             return;
         }
 
-        for(int nv : graph.get(vStart)){
-            if(!visit[nv]){
+        for (int nv : graph.get(vStart)) {
+            if (!visit[nv]) {
                 visit[nv] = true;
                 dfs(nv);
                 visit[nv] = false;
@@ -54,11 +54,11 @@ public class _12_DFS_인접리스트_경로탐색 {
 
         graph = new ArrayList<>();
 
-        for(int i=0; i<vEnd; i++){
+        for (int i = 0; i < vEnd + 1; i++) {
             graph.add(new ArrayList<>());
         }
 
-        visit = new boolean[vEnd+1];
+        visit = new boolean[vEnd + 1];
 
         for (int[] edge : arr) {
             int a = edge[0];

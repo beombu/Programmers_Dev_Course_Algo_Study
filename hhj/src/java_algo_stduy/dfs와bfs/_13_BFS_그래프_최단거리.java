@@ -1,17 +1,20 @@
-package src;
+package src.java_algo_stduy.dfs와bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Solution {
-    static int vertexSize = 7;
+public class _13_BFS_그래프_최단거리 {
 
     static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
 
+    static int vertexSize = 7;
+
     static boolean[] visit = new boolean[vertexSize];
 
+    //1번 정점에서 각 정점으로가는 최소 이동 간선수
     static int[] answer = new int[vertexSize];
+
 
     public static void main(String[] args) {
         init();
@@ -23,21 +26,25 @@ class Solution {
         }
     }
 
-    private static void bfs(int vStart) {
+    public static void bfs(int vStart) {
 
         Queue<Integer> queue = new LinkedList<>();
+
         queue.offer(vStart);
+
         visit[vStart] = true;
+
         answer[vStart] = 0;
 
-        while (!queue.isEmpty()){
+        while(!queue.isEmpty()){
+
             int currentV = queue.poll();
 
-            for(int nextV : graph.get(currentV)){
-                if(!visit[nextV]){
-                    visit[nextV] = true;
-                    queue.offer(nextV);
-                    answer[nextV] = answer[currentV] + 1;
+            for(int nv : graph.get(currentV)){
+                if(!visit[nv]){
+                    visit[nv] = true;
+                    queue.offer(nv);
+                    answer[nv] = answer[currentV] + 1;
                 }
             }
         }

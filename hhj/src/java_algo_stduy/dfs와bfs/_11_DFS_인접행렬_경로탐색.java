@@ -53,8 +53,8 @@ public class _11_DFS_인접행렬_경로탐색 {
                 {4, 5}
         };
 
-        visit = new boolean[vEnd+1];
-        graph = new int[vEnd+1][vEnd+1];
+        visit = new boolean[vEnd + 1];
+        graph = new int[vEnd + 1][vEnd + 1];
 
         for (int[] edge : arr) {
             int a = edge[0];
