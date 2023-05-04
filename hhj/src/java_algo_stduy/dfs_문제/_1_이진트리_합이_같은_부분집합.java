@@ -1,4 +1,4 @@
-package src.java_algo_stduy;
+package src.java_algo_stduy.dfs_문제;
 
 /**
  * N개의 원소로 구성된 자연수 집합
@@ -7,7 +7,7 @@ package src.java_algo_stduy;
  * 둘로 나뉘는 집합은 서로소 집합
  * 두 부분집합을 합치면 원래 집합이 되어야 함
  */
-public class DFS_1_이진트리_합이_같은_부분집합 {
+public class _1_이진트리_합이_같은_부분집합 {
 
     static int[] input1 = new int[]{1, 3, 5, 6, 7, 10};  //YES
     static int[] input2 = new int[]{1, 3, 5, 6, 7, 20};  //YES : 3+5+6+7 = 21 = 20+1

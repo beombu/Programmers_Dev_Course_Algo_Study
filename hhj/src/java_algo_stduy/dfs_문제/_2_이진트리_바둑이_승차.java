@@ -1,11 +1,11 @@
-package src.java_algo_stduy;
+package src.java_algo_stduy.dfs_문제;
 
 /**
  * 트럭은 네모 킬로그램 넘게 못 태움
  * 가장 무겁게 태울거임
  * N 마리의 바둑이와 가능한 무게 W
  */
-public class DFS_2_이진트리_바둑이_승차 {
+public class _2_이진트리_바둑이_승차 {
 
     static int maxWeight = 259;
     static int size = 5;
