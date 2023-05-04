@@ -5,67 +5,42 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-    static int vertexSize = 7;
 
-    static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+    static int[] input1 = new int[]{1, 3, 5, 6, 7, 10};  //YES
+    static int[] input2 = new int[]{1, 3, 5, 6, 7, 20};  //YES : 3+5+6+7 = 21 = 20+1
+    static int[] input3 = new int[]{1, 3, 5, 6, 7, 22};  //YES
+    static int size = 6;
 
-    static boolean[] visit = new boolean[vertexSize];
-
-    static int[] answer = new int[vertexSize];
+    static int totalSum = 0;
+    static String answer = "NO";
+    static boolean flag = false;
 
     public static void main(String[] args) {
-        init();
-
-        bfs(1);
-
-        for(int i=2; i<vertexSize; i++){
-            System.out.println(answer[i]);
+        for (int i : input1) {
+            totalSum += i;
         }
+
+        dfs(1, 0);
+
+        System.out.println(answer);
     }
 
-    private static void bfs(int vStart) {
+    public static void dfs(int depth, int sum) {
+        if (flag) return;
 
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(vStart);
-        visit[vStart] = true;
-        answer[vStart] = 0;
+        if (totalSum < 2 * sum) return;
 
-        while (!queue.isEmpty()){
-            int currentV = queue.poll();
-
-            for(int nextV : graph.get(currentV)){
-                if(!visit[nextV]){
-                    visit[nextV] = true;
-                    queue.offer(nextV);
-                    answer[nextV] = answer[currentV] + 1;
-                }
+        if (depth == size) {
+            if (totalSum == 2 * sum) {
+                answer = "YES";
+                flag = true;
             }
-        }
-    }
-
-    public static void init() {
-
-        int[][] arr = new int[][]{
-                {1, 3},
-                {1, 4},
-                {2, 1},
-                {2, 5},
-                {3, 4},
-                {4, 5},
-                {4, 6},
-                {6, 2},
-                {6, 5}
-        };
-
-        for (int i = 0; i < vertexSize; i++) {
-            graph.add(new ArrayList<>());
+            return;
         }
 
-        for (int[] edge : arr) {
-            int a = edge[0];
-            int b = edge[1];
-
-            graph.get(a).add(b);
+        for (int i = 0; i < size; i++) {
+            dfs(depth + 1, sum + input1[i]);
+            dfs(depth + 1, sum);
         }
     }
 }
