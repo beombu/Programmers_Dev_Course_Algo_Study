@@ -3,10 +3,10 @@ package src.java_algo_stduy.dfs와bfs_문제;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class _10_미로탐색_최단거리 {
+public class _10_BFS_미로탐색_최단거리 {
 
     static int[][] board, dis;
-    static int[] dx = {1, 0, -1, 0};
+    static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};
 
     public static void main(String[] args) {
