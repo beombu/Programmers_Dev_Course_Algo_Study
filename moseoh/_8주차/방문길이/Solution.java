@@ -59,12 +59,13 @@ class Solution {
         private final boolean[][][] map;
         private int currentX;
         private int currentY;
-        private int count = 0;
+        private int count;
 
         public PathTracker() {
             this.map = new boolean[MAP_LENGTH][MAP_LENGTH][4];
             this.currentX = 5;
             this.currentY = 5;
+            this.count = 0;
         }
 
         public void move(String move) {
