@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 public class _5_DFS_이진트리순회 {
 

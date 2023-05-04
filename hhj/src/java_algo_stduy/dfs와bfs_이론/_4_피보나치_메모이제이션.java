@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 public class _4_피보나치_메모이제이션 {
 

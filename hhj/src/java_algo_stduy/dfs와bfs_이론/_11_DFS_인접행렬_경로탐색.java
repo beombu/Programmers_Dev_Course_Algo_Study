@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 /**
  * 인접 행렬 원하는 값 찾을 때, 시간 복잡도와 메모리 측에서 매우 비효율적

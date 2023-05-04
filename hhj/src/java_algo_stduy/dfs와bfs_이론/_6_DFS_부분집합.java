@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 //자연수 N이 주어질 때 N 까지의 원소를 갖는 집합의 부분집합
 public class _6_DFS_부분집합 {

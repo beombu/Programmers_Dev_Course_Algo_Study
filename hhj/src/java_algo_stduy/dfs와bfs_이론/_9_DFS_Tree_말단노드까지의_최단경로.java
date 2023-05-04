@@ -1,4 +1,4 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 /**
  * 최단 경로이기 때문에 사실 BFS로 푸는 것이 맞음.

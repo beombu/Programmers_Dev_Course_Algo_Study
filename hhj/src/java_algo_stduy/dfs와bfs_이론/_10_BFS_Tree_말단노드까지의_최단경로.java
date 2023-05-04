@@ -1,14 +1,14 @@
-package src.java_algo_stduy.dfs와bfs;
+package src.java_algo_stduy.dfs와bfs_이론;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class _7_BFS_이진트리순회 {
+public class _10_BFS_Tree_말단노드까지의_최단경로 {
 
     static Node root;
+    static int level = 1;
 
-    static class Node {
-
+    public static class Node {
         int data;
         Node lt, rt;
 
@@ -20,11 +20,10 @@ public class _7_BFS_이진트리순회 {
 
     public static void main(String[] args) {
         init();
-
-        bfs(root, 1);
+        System.out.println(bfs(root));
     }
 
-    private static void bfs(Node node, int level) {
+    public static int bfs(Node node) {
 
         Queue<Node> queue = new LinkedList<>();
         queue.offer(node);
@@ -32,38 +31,31 @@ public class _7_BFS_이진트리순회 {
         while (!queue.isEmpty()) {
             int size = queue.size();
 
-            StringBuilder stringBuilder = new StringBuilder();
-
-            stringBuilder.append(level + " : ");
-
             for (int i = 0; i < size; i++) {
                 Node currentNode = queue.poll();
-                stringBuilder.append(currentNode.data + " ");
+                if (currentNode.lt == null & currentNode.rt == null) {
+                    return level;
+                }
 
-                if (currentNode.lt != null) {
+                if (currentNode.lt != null)
                     queue.offer(currentNode.lt);
-                }
-                if (currentNode.rt != null) {
+
+                if (currentNode.rt != null)
                     queue.offer(currentNode.rt);
-                }
             }
 
             level++;
-            System.out.println(stringBuilder);
         }
+
+        return 0;
     }
 
-    private static void init() {
+    public static void init() {
 
         root = new Node(1);
-
         root.lt = new Node(2);
         root.rt = new Node(3);
-
         root.lt.lt = new Node(4);
         root.lt.rt = new Node(5);
-
-        root.rt.lt = new Node(6);
-        root.rt.rt = new Node(7);
     }
 }
