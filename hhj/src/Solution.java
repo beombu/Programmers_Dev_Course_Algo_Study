@@ -3,15 +3,23 @@ package src;
 class Solution {
 
     /**
-     * ROR 게임은 두 팀으로 나누어서 진행
-     * 상대 팀 진영을 먼저 파괴하면 이기는 게임
-     * 상대 팀 진영에 도착할 수 없을 때는 -1
+     * 아래와 같은 규칙을 이용하여 begin에서 target으로 변환하는 가장 짧은 변환 과정
+     * 1. 한 번에 한 개의 알파벳만 바꿀 수 있습니다.
+     * 2. words에 있는 단어로만 변환할 수 있습니다.
      *
-     * @param maps : 게임 맵의 상태
-     * @return : 상대 팀 진영에 도착하기 위해서 지나가야 하는 칸의 개수의 최솟값
+     *
+     * @param begin : 시작 단어
+     * @param target : 변경할 단어
+     * @param words : 단어의 집합
+     * @return : 최소 몇 단계의 과정을 거쳐 begin을 target으로 변환할 수 있는지
      */
-    public int solution(int[][] maps) {
+    public int solution(String begin,
+                        String target,
+                        String[] words) {
+
         int answer = 0;
         return answer;
     }
+
+
 }
