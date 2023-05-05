@@ -1,46 +1,17 @@
 package src;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 class Solution {
 
-    static int[] input1 = new int[]{1, 3, 5, 6, 7, 10};  //YES
-    static int[] input2 = new int[]{1, 3, 5, 6, 7, 20};  //YES : 3+5+6+7 = 21 = 20+1
-    static int[] input3 = new int[]{1, 3, 5, 6, 7, 22};  //YES
-    static int size = 6;
-
-    static int totalSum = 0;
-    static String answer = "NO";
-    static boolean flag = false;
-
-    public static void main(String[] args) {
-        for (int i : input1) {
-            totalSum += i;
-        }
-
-        dfs(1, 0);
-
-        System.out.println(answer);
-    }
-
-    public static void dfs(int depth, int sum) {
-        if (flag) return;
-
-        if (totalSum < 2 * sum) return;
-
-        if (depth == size) {
-            if (totalSum == 2 * sum) {
-                answer = "YES";
-                flag = true;
-            }
-            return;
-        }
-
-        for (int i = 0; i < size; i++) {
-            dfs(depth + 1, sum + input1[i]);
-            dfs(depth + 1, sum);
-        }
+    /**
+     * ROR 게임은 두 팀으로 나누어서 진행
+     * 상대 팀 진영을 먼저 파괴하면 이기는 게임
+     * 상대 팀 진영에 도착할 수 없을 때는 -1
+     *
+     * @param maps : 게임 맵의 상태
+     * @return : 상대 팀 진영에 도착하기 위해서 지나가야 하는 칸의 개수의 최솟값
+     */
+    public int solution(int[][] maps) {
+        int answer = 0;
+        return answer;
     }
 }
