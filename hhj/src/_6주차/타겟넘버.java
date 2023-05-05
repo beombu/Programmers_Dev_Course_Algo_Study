@@ -1,6 +1,10 @@
 package src._6주차;
 
+
 public class 타겟넘버 {
+
+    static int size;
+    static int answer = 0;
 
     /**
      * n개의 정수를 순서를 바꾸지 않고 덧셈, 뺄셈하여 타겟 넘버 생성
@@ -11,27 +15,27 @@ public class 타겟넘버 {
     public static int solution(int[] numbers,
                                int target){
 
-        return dfs(numbers, target, 0, 0);
+        size = numbers.length;
+
+        dfs(0, 0, target, numbers);
+
+        return answer;
     }
 
-    private static int dfs(int[] numbers,
+    private static void dfs(int depth,
+                            int sum,
                             int target,
-                            int depth,
-                            int currentNumber) {
+                            int[] numbers){
 
-        int count = 0;
-
-        if(depth == numbers.length){
-            if(currentNumber == target){
-                return 1;
+        if(depth == size){
+            if(target == sum){
+                answer++;
             }
-            return 0;
+            return;
         }
 
-        count += dfs(numbers, target, depth+1, currentNumber+numbers[depth]);
-        count += dfs(numbers, target, depth+1, currentNumber-numbers[depth]);
-
-        return count;
+        dfs(depth + 1, sum+numbers[depth], target, numbers);
+        dfs(depth + 1, sum-numbers[depth], target, numbers);
     }
 
     public static void main(String[] args) {
