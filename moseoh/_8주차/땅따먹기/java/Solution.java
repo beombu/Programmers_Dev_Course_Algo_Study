@@ -1,4 +1,4 @@
-package _8주차.땅따먹기;
+package _8주차.땅따먹기.java;
 
 class Solution {
     int answer = 0;
