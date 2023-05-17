@@ -1,0 +1,25 @@
+class Solution {
+    public long[] solution(long[] numbers) {
+        long[] answer = new long[numbers.length];
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 4 != 3) {
+                answer[i] = numbers[i] + 1;
+                continue;
+            }
+
+            String num = Long.toBinaryString(numbers[i]);
+            if (!num.contains("0")) {
+                num = "0" + num;
+                num = String.valueOf(num.charAt(1)) + num.charAt(0) + num.substring(2);
+            }else{
+                int x = num.lastIndexOf("0");
+                num = num.substring(0, x) + "10" + num.substring(x + 2);
+            }
+
+            answer[i] = Long.parseLong(num, 2);
+        }
+
+        return answer;
+    }
+}
