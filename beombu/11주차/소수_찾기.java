@@ -14,11 +14,14 @@ public class 소수_찾기 {
     }
 
     private void dfs(String str, int idx) {
-        if (nums.length == idx) {
-            System.out.println(str);
+        if (!str.equals("")) {
             if (isPrime(Integer.parseInt(str))) {
                 set.add(Integer.parseInt(str));
             }
+        }
+
+        if (nums.length == idx) {
+            return;
         }
 
         for (int i = 0; i < nums.length; i++) {
