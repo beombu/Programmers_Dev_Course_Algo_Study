@@ -1,30 +1,30 @@
-
+ï»¿
 
 import java.util.*;
 
 class Solution {
-    // course °³¼ö¿¡ µû¶ó ¸Ş´º Á¶ÇÕÀÇ Á¾·ù¸¦ ´ãÀ» Map, course°¡ ´Ş¶óÁö¸é ÃÊ±âÈ­ ÀÛ¾÷ ÇÊ¿ä
+    // course ê°œìˆ˜ì— ë”°ë¼ ë©”ë‰´ ì¡°í•©ì˜ ì¢…ë¥˜ë¥¼ ë‹´ì„ Map, courseê°€ ë‹¬ë¼ì§€ë©´ ì´ˆê¸°í™” ì‘ì—… í•„ìš”
     HashMap<String, Integer> combiMapEachCourse;
-    // course °³¼ö¿¡ µû¶ó ÃÖ´ë·Î ¸¹ÀÌ Ã£¾ÆÁá´ø Á¶ÇÕÀÇ °³¼ö, course°¡ ´Ş¶óÁö¸é ÃÊ±âÈ­ ÀÛ¾÷ ÇÊ¿ä 
+    // course ê°œìˆ˜ì— ë”°ë¼ ìµœëŒ€ë¡œ ë§ì´ ì°¾ì•„ì¤¬ë˜ ì¡°í•©ì˜ ê°œìˆ˜, courseê°€ ë‹¬ë¼ì§€ë©´ ì´ˆê¸°í™” ì‘ì—… í•„ìš” 
     int maxCntEachCourse;
     
     public String[] solution(String[] orders, int[] course) {
         
         ArrayList<String> ansOfList = new ArrayList<>();
         
-        // 1. »ç¿ëÀÚ°¡ ¸¸µé°íÀÚ ÇÏ´Â course ±¸¼º¿¡ ¸Â°Ô Á¶ÇÕ ¸¸µé ÇÊ¿ä
+        // 1. ì‚¬ìš©ìê°€ ë§Œë“¤ê³ ì í•˜ëŠ” course êµ¬ì„±ì— ë§ê²Œ ì¡°í•© ë§Œë“¤ í•„ìš”
         for(int tgMenuCount : course) {
-            // 1-1. ¸Å¹ø course ¸¶´Ù ÃÊ±âÈ­ ÀÛ¾÷ ÇÊ¿ä
+            // 1-1. ë§¤ë²ˆ course ë§ˆë‹¤ ì´ˆê¸°í™” ì‘ì—… í•„ìš”
             combiMapEachCourse = new HashMap<>();
             maxCntEachCourse = 0;
             
-            // 2. ¼Õ´ÔÀÌ ÁÖ¹®ÇÑ ¸ğµç orders¸¦ ¼øÈ¸ÇÏ¸é¼­ course¿¡ ¸Â´Â Á¶ÇÕ ¸¸µé ÇÊ¿ä.
+            // 2. ì†ë‹˜ì´ ì£¼ë¬¸í•œ ëª¨ë“  ordersë¥¼ ìˆœíšŒí•˜ë©´ì„œ courseì— ë§ëŠ” ì¡°í•© ë§Œë“¤ í•„ìš”.
             for(String order : orders) {
-                // 3. order ±âÁØÀ¸·Î ¸Å¹ø Á¤·ÄÇÑ »óÅÂ·Î Á¶ÇÕÀ» ±¸ÇÑ´Ù.
+                // 3. order ê¸°ì¤€ìœ¼ë¡œ ë§¤ë²ˆ ì •ë ¬í•œ ìƒíƒœë¡œ ì¡°í•©ì„ êµ¬í•œë‹¤.
                 char[] orderChars = order.toCharArray();
                 Arrays.sort(orderChars);
                 
-                // 4. Á¶ÇÕÀ» ¸¸µå´Â DFS ¼öÇà (startIdx, ÇÏ³ªÀÇ ÄÚ½º¸¦ ±¸¼ºÇÏ±â À§ÇÑ ¸Ş´º °³¼ö, Á¶ÇÕ¹®ÀÚ¿­, Á¤·ÄµÈ ¹®ÀÚ¿­)
+                // 4. ì¡°í•©ì„ ë§Œë“œëŠ” DFS ìˆ˜í–‰ (startIdx, í•˜ë‚˜ì˜ ì½”ìŠ¤ë¥¼ êµ¬ì„±í•˜ê¸° ìœ„í•œ ë©”ë‰´ ê°œìˆ˜, ì¡°í•©ë¬¸ìì—´, ì •ë ¬ëœ ë¬¸ìì—´)
                 combination(0, tgMenuCount, "", orderChars);
             }
             
@@ -38,14 +38,14 @@ class Solution {
 
         }
         
-        // Ãâ·ÂÀ» À§ÇÑ ¿À¸§ Â÷¼ø Á¤·Ä
+        // ì¶œë ¥ì„ ìœ„í•œ ì˜¤ë¦„ ì°¨ìˆœ ì •ë ¬
         return ansOfList.stream().sorted().toArray(String[]::new);
 
     }
     
     
     void combination(int startIdx, int tgMenuCount, String combi, char[] orderChars) {
-        // 6. String combi¿¡ ´ã±ä ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ ÄÚ½º·Î ±¸¼ºÇÏ°íÀÚ ÇÏ´Â ¸Ş´º »çÀÌÁî¿Í °°´Ù¸é
+        // 6. String combiì— ë‹´ê¸´ ë¬¸ìì—´ì˜ ê¸¸ì´ê°€ ì½”ìŠ¤ë¡œ êµ¬ì„±í•˜ê³ ì í•˜ëŠ” ë©”ë‰´ ì‚¬ì´ì¦ˆì™€ ê°™ë‹¤ë©´
         // DFS return
         if(combi.length() == tgMenuCount) {
             int prevCnt = combiMapEachCourse.getOrDefault(combi, 0);
@@ -54,7 +54,7 @@ class Solution {
             maxCntEachCourse = Math.max(maxCntEachCourse, newCnt);
             return;
         }
-        // 5. startIdx ºÎÅÍ ½ÃÀÛÇØ¼­ ¸¸µé¼ö ÀÖ´Â Á¶ÇÕ ¹®ÀÚ¸¦ String combi¿¡ ³Ö´Â´Ù.
+        // 5. startIdx ë¶€í„° ì‹œì‘í•´ì„œ ë§Œë“¤ìˆ˜ ìˆëŠ” ì¡°í•© ë¬¸ìë¥¼ String combiì— ë„£ëŠ”ë‹¤.
         for(int start = startIdx; start < orderChars.length; start++) {
             char menu = orderChars[start];
             combination(start + 1, tgMenuCount, combi + menu, orderChars);
