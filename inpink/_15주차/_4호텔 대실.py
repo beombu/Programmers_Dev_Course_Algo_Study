@@ -13,4 +13,4 @@ def solution(book_time):
             else:
                 dic[t] += 1
     
-    return max(dic.values())
+    return max(dic.values()) 
