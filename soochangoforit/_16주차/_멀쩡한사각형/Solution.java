@@ -4,11 +4,11 @@ class Solution {
         
         long answer = 1;
         
-        // 0. ÃÖ´ë °ø¾à¼ö¸¦ ±¸ÇÏ±â Àü¿¡ Å« °ªÀ» °¡·Î·Î ÆÇ´Ü.
+        // 0. ìµœëŒ€ ê³µì•½ìˆ˜ë¥¼ êµ¬í•˜ê¸° ì „ì— í° ê°’ì„ ê°€ë¡œë¡œ íŒë‹¨.
         int rec_w = (w > h) ? w : h;
         int rec_h = (w > h) ? h : w;
         
-        // 1. w¿Í hÀÇ ÃÖ´ë °ø¾à¼ö ±¸ÇÏ±â
+        // 1. wì™€ hì˜ ìµœëŒ€ ê³µì•½ìˆ˜ êµ¬í•˜ê¸°
         int tmp_w = rec_w;
         int tmp_h = rec_h;
         
@@ -18,14 +18,14 @@ class Solution {
             tmp_h = r;
         }
         
-        // 2. tmp_w°¡ °ğ gcd ÃÖ´ë °ø¾à¼ö, gcd ¸¸Å­ ÆĞÅÏ ¹İº¹
+        // 2. tmp_wê°€ ê³§ gcd ìµœëŒ€ ê³µì•½ìˆ˜, gcd ë§Œí¼ íŒ¨í„´ ë°˜ë³µ
         int gcd = tmp_w;
         
         int pattern_w = rec_w / gcd;
         int pattern_h = rec_h / gcd;
         
         
-        // 3. ÆĞÅÏ¿¡ Á¸ÀçÇÏ´Â Èò»ö Ä­ °³¼ö ±¸ÇÏ±â
+        // 3. íŒ¨í„´ì— ì¡´ì¬í•˜ëŠ” í°ìƒ‰ ì¹¸ ê°œìˆ˜ êµ¬í•˜ê¸°
         int pattern_black_block = (pattern_w - 1) * (pattern_h - 1);
         int pattern_white_block = (pattern_w * pattern_h) - pattern_black_block;
         
