@@ -3,21 +3,21 @@ import java.util.*;
 class Solution {
     public int solution(int[][] data, int col, int rowBegin, int rowEnd) {
         
-        // ¶÷´Ù Ç¥Çö½ÄÀ» »ç¿ëÇÏ¿© µ¥ÀÌÅÍ Á¤·Ä
+        // ëŒë‹¤ í‘œí˜„ì‹ì„ ì‚¬ìš©í•˜ì—¬ ë°ì´í„° ì •ë ¬
         Arrays.sort(data, (row1, row2) -> {
             int colIdx = col - 1;
             if (row1[colIdx] == row2[colIdx]) {
-                // ±âº»ÀûÀ¸·Î ³»¸²Â÷¼ø Á¤·Ä
+                // ê¸°ë³¸ì ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
                 return Integer.compare(row2[0], row1[0]);
             } else {
-                // col¹øÂ° ¿­À» ±âÁØÀ¸·Î ¿À¸§Â÷¼ø Á¤·Ä
+                // colë²ˆì§¸ ì—´ì„ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
                 return Integer.compare(row1[colIdx], row2[colIdx]);
             }
         });
 
         int answer = 0;
 
-        // S_i¿¡ ´ëÇÑ ´©Àû XOR °è»ê
+        // S_iì— ëŒ€í•œ ëˆ„ì  XOR ê³„ì‚°
         for (int i = rowBegin - 1; i <= rowEnd - 1; i++) {
             int sum = 0;
             for (int num : data[i]) {
