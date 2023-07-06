@@ -10,7 +10,7 @@ public class Solution {
         this.colSize = relation[0].length;
         this.candidateKeys = new ArrayList<>();
 
-        // i ´Â 1 ~ 4 (¿­ 4°³ Å×ÀÌºí ±âÁØ)
+        // i ëŠ” 1 ~ 4 (ì—´ 4ê°œ í…Œì´ë¸” ê¸°ì¤€)
         for (int i = 1; i <= colSize; i++) {
             makeCombinations(0, 0, i, new HashSet<>());
         }
@@ -19,32 +19,32 @@ public class Solution {
     }
 
     /**
-     * @param start Á¶ÇÕÀ» »ı¼ºÇÒ ½ÃÀÛ ÀÎµ¦½º
-     * @param depth ÇöÀç Á¶ÇÕÀÇ ±æÀÌ
-     * @param target ¸ñÇ¥ÇÏ°íÀÚ ÇÏ´Â Á¶ÇÕÀÇ ±æÀÌ
-     * @param columns ÇöÀç±îÁö »ÌÀº Á¶ÇÕÀÇ ÁıÇÕ
+     * @param start ì¡°í•©ì„ ìƒì„±í•  ì‹œì‘ ì¸ë±ìŠ¤
+     * @param depth í˜„ì¬ ì¡°í•©ì˜ ê¸¸ì´
+     * @param target ëª©í‘œí•˜ê³ ì í•˜ëŠ” ì¡°í•©ì˜ ê¸¸ì´
+     * @param columns í˜„ì¬ê¹Œì§€ ë½‘ì€ ì¡°í•©ì˜ ì§‘í•©
      */
     private void makeCombinations(int start, int depth, int target, Set<Integer> columns) {
 
-        // if ¹® ¾È¿¡¼­´Â dept, target, columns °ªÀ» °í·ÁÇÏ¸é µÈ´Ù.
+        // if ë¬¸ ì•ˆì—ì„œëŠ” dept, target, columns ê°’ì„ ê³ ë ¤í•˜ë©´ ëœë‹¤.
         if (depth == target) {
-            // {ÈÄº¸Å°°¡ µÉ ¼ö ÀÖÀ»Áö ¾øÀ»Áö ¸ğ¸£´Â column(¿­) ÁıÇÕ}ÀÌ {ÀÌ¹Ì ±âÁ¸ À¯ÀÏ¼º°ú ÃÖ¼Ò¼ºÀ» ¸¸Á·ÇÏ´Â key}À» Æ÷ÇÔÇÏ°í ÀÖÀ¸¸é : ÃÖ¼Ò¼ºÀ» ¸¸Á·ÇÏÁö ¸ø ÇØ return ÇÊ¿ä.
-            // Áï, ÃÖ¼Ò¼ºÀ» ¸¸Á·ÇÏÁö ¸ø ÇÏ´Â °æ¿ì
+            // {í›„ë³´í‚¤ê°€ ë  ìˆ˜ ìˆì„ì§€ ì—†ì„ì§€ ëª¨ë¥´ëŠ” column(ì—´) ì§‘í•©}ì´ {ì´ë¯¸ ê¸°ì¡´ ìœ ì¼ì„±ê³¼ ìµœì†Œì„±ì„ ë§Œì¡±í•˜ëŠ” key}ì„ í¬í•¨í•˜ê³  ìˆìœ¼ë©´ : ìµœì†Œì„±ì„ ë§Œì¡±í•˜ì§€ ëª» í•´ return í•„ìš”.
+            // ì¦‰, ìµœì†Œì„±ì„ ë§Œì¡±í•˜ì§€ ëª» í•˜ëŠ” ê²½ìš°
             for (Set<Integer> keySet : candidateKeys) {
                 if (columns.containsAll(keySet)) return;
             }
 
-            // ÃÖ¼Ò¼ºÀº ¸¸Á·ÇÏÁö¸¸, À¯ÀÏ¼ºµµ ¸¸Á·ÇÏ´ÂÁö ¿©ºÎ
+            // ìµœì†Œì„±ì€ ë§Œì¡±í•˜ì§€ë§Œ, ìœ ì¼ì„±ë„ ë§Œì¡±í•˜ëŠ”ì§€ ì—¬ë¶€
             if (checkUniqueness(columns)) {
-                // À¯ÀÏ¼ºµµ ¸¸Á·ÇÑ´Ù¸é ÃÖÁ¾ÀûÀ¸·Î ÈÄº¸Å°°¡ µÉ ¼ö ÀÖ´Ù.
+                // ìœ ì¼ì„±ë„ ë§Œì¡±í•œë‹¤ë©´ ìµœì¢…ì ìœ¼ë¡œ í›„ë³´í‚¤ê°€ ë  ìˆ˜ ìˆë‹¤.
                 candidateKeys.add(columns);
             }
             return;
         }
 
         for (int i = start; i < colSize; i++) {
-            // Àç±Í È£ÃâÀÌ columnsÀÇ µ¶¸³ÀûÀÎ º¹»çº»À» »ç¿ë
-            //  ÇÑ Àç±Í È£Ãâ¿¡¼­ columnsÀÇ »óÅÂ¸¦ º¯°æÇØµµ ´Ù¸¥ Àç±Í È£Ãâ¿¡´Â ¿µÇâÀ» ÁÖÁö ¾Ê´Â´Ù.
+            // ì¬ê·€ í˜¸ì¶œì´ columnsì˜ ë…ë¦½ì ì¸ ë³µì‚¬ë³¸ì„ ì‚¬ìš©
+            //  í•œ ì¬ê·€ í˜¸ì¶œì—ì„œ columnsì˜ ìƒíƒœë¥¼ ë³€ê²½í•´ë„ ë‹¤ë¥¸ ì¬ê·€ í˜¸ì¶œì—ëŠ” ì˜í–¥ì„ ì£¼ì§€ ì•ŠëŠ”ë‹¤.
             Set<Integer> newSet = new HashSet<>(columns);
             newSet.add(i);
             makeCombinations(i + 1, depth + 1, target, newSet);
@@ -52,17 +52,17 @@ public class Solution {
     }
 
     /**
-     * @param columns ÇöÀç±îÁö »ÌÀº Á¶ÇÕÀÇ ÁıÇÕ
+     * @param columns í˜„ì¬ê¹Œì§€ ë½‘ì€ ì¡°í•©ì˜ ì§‘í•©
      */
     private boolean checkUniqueness(Set<Integer> columns) {
         List<String> tuples = new ArrayList<>();
 
-        // Á¶ÇÕ columns ¿¡ ÀÖ´Â "ÈÄº¸Å°°¡ µÉ ¼öµµ ÀÖ°í ¾ÈµÉ¼öµµ ÀÖ´Â" Å°µéÀÇ ¿­À» »Ì´Â´Ù.
-        // ¸ğµç °¡·Î ÁÙ tupleÀ» °¡Á®¿Â´Ù.
+        // ì¡°í•© columns ì— ìˆëŠ” "í›„ë³´í‚¤ê°€ ë  ìˆ˜ë„ ìˆê³  ì•ˆë ìˆ˜ë„ ìˆëŠ”" í‚¤ë“¤ì˜ ì—´ì„ ë½‘ëŠ”ë‹¤.
+        // ëª¨ë“  ê°€ë¡œ ì¤„ tupleì„ ê°€ì ¸ì˜¨ë‹¤.
         for (String[] tuple : relation) {
-            // ÇÏ³ªÀÇ row¿¡¼­ column¿¡ ÇØ´çÇÏ´Â ¸ğµç ¹®ÀÚ¿­À» ÇÏ³ª·Î ÇÕÄ£´Ù.
+            // í•˜ë‚˜ì˜ rowì—ì„œ columnì— í•´ë‹¹í•˜ëŠ” ëª¨ë“  ë¬¸ìì—´ì„ í•˜ë‚˜ë¡œ í•©ì¹œë‹¤.
             // ex) 100ryanmusic2
-            // column 1 index ¸¸ °í·ÁÇÏ´Â °æ¿ì, tuples¿¡ "ryan", "apeach", "tube", "con", "muzi", "apeach" °¡ µÈ´Ù.
+            // column 1 index ë§Œ ê³ ë ¤í•˜ëŠ” ê²½ìš°, tuplesì— "ryan", "apeach", "tube", "con", "muzi", "apeach" ê°€ ëœë‹¤.
             StringBuilder sb = new StringBuilder();
             for (int column : columns) {
                 sb.append(tuple[column]);
@@ -70,7 +70,7 @@ public class Solution {
             tuples.add(sb.toString());
         }
 
-        // columns ±âÁØÀ¸·Î ¸¸µç, ¸ğµç tupleµéÀÇ ÁıÇÕÀÌ Áßº¹µÇÁö ¾Ê´Â´Ù¸é, ÈÄº¸Å°°¡ µÉ ¼ö ÀÖ´Ù.
+        // columns ê¸°ì¤€ìœ¼ë¡œ ë§Œë“ , ëª¨ë“  tupleë“¤ì˜ ì§‘í•©ì´ ì¤‘ë³µë˜ì§€ ì•ŠëŠ”ë‹¤ë©´, í›„ë³´í‚¤ê°€ ë  ìˆ˜ ìˆë‹¤.
         Set<String> uniqueTuples = new HashSet<>(tuples);
         int rowCount = relation.length;
 
