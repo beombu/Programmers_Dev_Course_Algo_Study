@@ -2,12 +2,11 @@ import java.util.*;
 
 public class Solution {
     public double[] solution(int k, int[][] ranges) {
-        List<Long> nums = new ArrayList<>();
-        nums.add((long)k);
-        long current = k;
+        List<Integer> nums = new ArrayList<>();
+        nums.add(k);
+        int current = k;
         
         // 0. 콜라츠 추측을 통해 나온 num 값을 저장
-        // 3배 곱하는 과정에서 int 범위를 벗어날 수 있기에 nums 리스트에 Long 형식으로 저장하게 한다.
         while(current != 1) {
             if (current % 2 == 0) {
                 current /= 2;
